@@ -3,40 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jayara - Premium freelance web developer portfolio by Jay Dhas. Modern websites for businesses, restaurants, cafes, hotels, clinics, brokers and service businesses." />
+  <meta name="description" content="Jayara by Jay Dhas - Freelance web developer creating modern, fast and mobile-friendly websites for businesses." />
+  <meta name="keywords" content="Jayara, Jay Dhas, Freelance Web Developer, Website Developer, Business Website, Portfolio Website" />
   <title>Jayara | Freelance Web Developer</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
+    :root {
+      --bg: #f8fbff;
+      --white: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --blue: #2563eb;
+      --blue2: #38bdf8;
+      --glass: rgba(255,255,255,0.72);
+      --shadow: 0 24px 70px rgba(37,99,235,0.14);
+      --border: rgba(37,99,235,0.16);
+    }
+
+    .dark {
+      --bg: #07111f;
+      --white: #0f1b2d;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --glass: rgba(15,27,45,0.72);
+      --shadow: 0 24px 70px rgba(0,0,0,0.35);
+      --border: rgba(148,163,184,0.18);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
-    }
-
-    :root {
-      --bg: #ffffff;
-      --soft-bg: #f5f9ff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --card: rgba(255,255,255,0.78);
-      --border: rgba(37,99,235,0.16);
-      --shadow: 0 25px 70px rgba(37, 99, 235, 0.15);
-      --radius: 26px;
-    }
-
-    body.dark {
-      --bg: #020617;
-      --soft-bg: #071124;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --card: rgba(15, 23, 42, 0.75);
-      --border: rgba(96,165,250,0.22);
-      --shadow: 0 25px 70px rgba(0,0,0,0.45);
     }
 
     body {
@@ -51,193 +51,170 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 10% 10%, rgba(37,99,235,.15), transparent 30%),
-        radial-gradient(circle at 90% 20%, rgba(14,165,233,.12), transparent 35%),
-        radial-gradient(circle at 50% 90%, rgba(59,130,246,.10), transparent 30%);
+        radial-gradient(circle at 15% 10%, rgba(56,189,248,.22), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(37,99,235,.18), transparent 28%),
+        radial-gradient(circle at 60% 90%, rgba(14,165,233,.14), transparent 30%);
       z-index: -1;
     }
+
+    a { text-decoration: none; color: inherit; }
+    section { padding: 95px 7%; }
 
     .loader {
       position: fixed;
       inset: 0;
       background: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       z-index: 9999;
+      display: grid;
+      place-items: center;
+      transition: .5s;
+    }
+
+    .loader.hide {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .loader span {
-      width: 55px;
-      height: 55px;
-      border: 4px solid #dbeafe;
-      border-top-color: var(--primary);
+      width: 58px;
+      height: 58px;
+      border: 5px solid #dbeafe;
+      border-top-color: var(--blue);
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     header {
       position: fixed;
       top: 18px;
-      left: 0;
-      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 88%;
       z-index: 1000;
+      background: var(--glass);
+      backdrop-filter: blur(22px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
     }
 
     nav {
-      width: min(1180px, 92%);
-      margin: auto;
-      padding: 16px 22px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--card);
-      backdrop-filter: blur(20px);
-      box-shadow: var(--shadow);
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
     }
 
     .logo {
-      font-size: 1.45rem;
+      font-size: 25px;
       font-weight: 900;
-      color: var(--primary);
+      color: var(--blue);
       letter-spacing: -1px;
     }
 
-    .logo span {
-      color: var(--text);
-    }
+    .logo span { color: var(--text); }
 
     .nav-links {
       display: flex;
       gap: 24px;
-      list-style: none;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--muted);
     }
 
-    .nav-links a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: .95rem;
-      transition: .3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
+    .nav-links a:hover { color: var(--blue); }
 
     .nav-actions {
       display: flex;
-      align-items: center;
       gap: 12px;
+      align-items: center;
     }
 
-    .toggle, .menu {
-      border: none;
+    .icon-btn, .menu-btn {
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: var(--soft-bg);
-      color: var(--primary);
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--blue);
       cursor: pointer;
-      font-size: 1rem;
+      box-shadow: 0 10px 30px rgba(37,99,235,.12);
     }
 
-    .menu {
-      display: none;
-    }
-
-    section {
-      padding: 100px 0;
-    }
+    .menu-btn { display: none; }
 
     .hero {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 130px;
-    }
-
-    .hero-grid {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
-      gap: 50px;
       align-items: center;
+      gap: 60px;
+      padding-top: 150px;
     }
 
-    .badge {
+    .tag {
       display: inline-flex;
       gap: 10px;
       align-items: center;
       padding: 10px 16px;
       border-radius: 999px;
-      background: var(--card);
+      background: var(--glass);
       border: 1px solid var(--border);
-      color: var(--primary);
-      font-weight: 700;
+      color: var(--blue);
+      font-weight: 800;
       margin-bottom: 22px;
-      box-shadow: var(--shadow);
     }
 
-    h1 {
-      font-size: clamp(2.6rem, 6vw, 5.7rem);
-      line-height: 1;
-      letter-spacing: -4px;
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -3px;
       margin-bottom: 24px;
     }
 
     .gradient {
-      background: linear-gradient(120deg, #2563eb, #38bdf8);
+      background: linear-gradient(120deg, var(--blue), var(--blue2));
       -webkit-background-clip: text;
       color: transparent;
     }
 
     .hero p {
-      font-size: 1.16rem;
+      max-width: 680px;
+      font-size: 19px;
       color: var(--muted);
-      max-width: 650px;
       line-height: 1.8;
-      margin-bottom: 32px;
+      margin-bottom: 34px;
     }
 
-    .btn-group {
+    .buttons {
       display: flex;
-      flex-wrap: wrap;
       gap: 16px;
+      flex-wrap: wrap;
     }
 
     .btn {
       padding: 15px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 800;
+      border-radius: 16px;
+      font-weight: 900;
       display: inline-flex;
-      align-items: center;
       gap: 10px;
-      transition: .35s;
-      border: 1px solid transparent;
+      align-items: center;
+      transition: .3s;
+      border: 1px solid var(--border);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), #38bdf8);
       color: white;
-      box-shadow: 0 16px 35px rgba(37,99,235,.32);
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      box-shadow: 0 20px 45px rgba(37,99,235,.28);
     }
 
-    .btn-outline {
-      color: var(--primary);
-      border-color: var(--border);
-      background: var(--card);
+    .btn-light {
+      background: var(--white);
+      color: var(--blue);
     }
 
     .btn:hover {
@@ -246,169 +223,65 @@
 
     .hero-card {
       position: relative;
-      min-height: 460px;
-      border-radius: 36px;
-      background: var(--card);
+      padding: 28px;
+      border-radius: 35px;
+      background: var(--glass);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(22px);
-      padding: 30px;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 230px;
-      height: 230px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #2563eb, #38bdf8);
-      right: -60px;
-      top: -60px;
-      opacity: .18;
-    }
-
-    .browser {
-      position: relative;
-      background: var(--bg);
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      box-shadow: 0 22px 45px rgba(15,23,42,.12);
-      animation: float 5s ease-in-out infinite;
+      animation: float 4s ease-in-out infinite;
     }
 
     @keyframes float {
-      50% { transform: translateY(-16px); }
+      50% { transform: translateY(-14px); }
     }
 
-    .browser-top {
-      padding: 14px;
-      background: var(--soft-bg);
-      display: flex;
-      gap: 7px;
-    }
-
-    .dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--primary);
-      opacity: .55;
-    }
-
-    .preview {
+    .dashboard {
+      background: var(--white);
+      border-radius: 28px;
       padding: 24px;
-    }
-
-    .line {
-      height: 14px;
-      border-radius: 20px;
-      background: #dbeafe;
-      margin-bottom: 14px;
-    }
-
-    .line.big {
-      height: 95px;
-      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 16px;
-      margin-top: 26px;
-    }
-
-    .stat {
-      text-align: center;
-      padding: 20px;
-      border-radius: 22px;
-      background: var(--card);
       border: 1px solid var(--border);
     }
 
-    .stat h3 {
-      font-size: 2rem;
-      color: var(--primary);
+    .dash-top {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 22px;
     }
 
-    .stat p {
-      color: var(--muted);
-      font-size: .9rem;
-      margin-top: 4px;
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--blue2);
     }
+
+    .dash-item {
+      padding: 18px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(37,99,235,.08), transparent);
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .dash-item h3 { margin-bottom: 8px; }
+    .dash-item p { color: var(--muted); font-size: 14px; line-height: 1.6; }
 
     .section-title {
       text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-title span {
-      color: var(--primary);
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: .85rem;
-      letter-spacing: 2px;
+      max-width: 760px;
+      margin: 0 auto 55px;
     }
 
     .section-title h2 {
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      margin-top: 10px;
+      font-size: clamp(32px, 5vw, 52px);
       letter-spacing: -2px;
+      margin-bottom: 16px;
     }
 
     .section-title p {
       color: var(--muted);
-      max-width: 650px;
-      margin: 14px auto 0;
-      line-height: 1.7;
-    }
-
-    .about-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 34px;
-      align-items: center;
-    }
-
-    .glass {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 34px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(20px);
-    }
-
-    .about h3 {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .about p {
-      color: var(--muted);
       line-height: 1.8;
-      margin-bottom: 14px;
-    }
-
-    .list {
-      display: grid;
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .list div {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    .list i {
-      color: var(--primary);
+      font-size: 17px;
     }
 
     .grid {
@@ -418,233 +291,218 @@
     }
 
     .card {
-      background: var(--card);
+      background: var(--glass);
+      backdrop-filter: blur(18px);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: 28px;
       padding: 30px;
       box-shadow: var(--shadow);
-      transition: .35s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      background: var(--primary);
-      opacity: .06;
-      right: -40px;
-      bottom: -40px;
-      border-radius: 50%;
       transition: .35s;
     }
 
     .card:hover {
-      transform: translateY(-12px);
-    }
-
-    .card:hover::after {
-      transform: scale(1.8);
+      transform: translateY(-10px);
+      border-color: rgba(37,99,235,.35);
     }
 
     .icon {
       width: 62px;
       height: 62px;
       border-radius: 20px;
-      background: linear-gradient(135deg, #dbeafe, #eff6ff);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 25px;
+      margin-bottom: 22px;
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      box-shadow: 0 16px 35px rgba(37,99,235,.25);
     }
 
     .card h3 {
-      font-size: 1.25rem;
+      font-size: 22px;
       margin-bottom: 12px;
     }
 
     .card p {
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
-    .portfolio-card img {
-      width: 100%;
-      height: 210px;
-      object-fit: cover;
-      border-radius: 22px;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-    }
-
-    .portfolio-img {
-      height: 210px;
-      border-radius: 22px;
-      margin-bottom: 20px;
-      background:
-        linear-gradient(135deg, rgba(37,99,235,.8), rgba(56,189,248,.65)),
-        radial-gradient(circle at top left, #fff, transparent 35%);
-      display: flex;
+    .about-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 35px;
       align-items: center;
-      justify-content: center;
+    }
+
+    .profile-box {
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .profile-circle {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      display: grid;
+      place-items: center;
       color: white;
-      font-size: 3rem;
+      font-size: 72px;
+      box-shadow: 0 30px 70px rgba(37,99,235,.35);
+      margin-bottom: 24px;
     }
 
-    .small-btns {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 26px;
     }
 
-    .small-btns a {
-      padding: 11px 15px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: .9rem;
-      background: var(--soft-bg);
-      color: var(--primary);
+    .stat {
+      padding: 24px;
+      text-align: center;
+      border-radius: 24px;
+      background: var(--white);
       border: 1px solid var(--border);
     }
 
-    .why-grid {
+    .stat h3 {
+      font-size: 34px;
+      color: var(--blue);
+    }
+
+    .portfolio-img {
+      height: 190px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-size: 45px;
+      margin-bottom: 22px;
+    }
+
+    .benefits {
       grid-template-columns: repeat(4, 1fr);
+    }
+
+    .mini {
+      text-align: center;
+      padding: 26px 18px;
     }
 
     .process {
       counter-reset: step;
     }
 
-    .process-card {
+    .process .card {
       position: relative;
     }
 
-    .process-card::before {
+    .process .card::before {
       counter-increment: step;
       content: "0" counter(step);
       position: absolute;
+      top: 22px;
       right: 24px;
-      top: 20px;
-      font-size: 2.8rem;
+      font-size: 34px;
       font-weight: 900;
-      color: var(--primary);
-      opacity: .12;
+      color: rgba(37,99,235,.16);
     }
 
-    .testimonial h4 {
-      margin-top: 18px;
-      color: var(--primary);
-    }
-
-    .stars {
+    .testimonial .stars {
       color: #f59e0b;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
     }
 
     .pricing-box {
-      text-align: center;
-      max-width: 620px;
+      max-width: 780px;
       margin: auto;
+      text-align: center;
+      padding: 45px;
+      border-radius: 35px;
+      background: linear-gradient(135deg, rgba(37,99,235,.12), rgba(56,189,248,.10));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
 
     .pricing-box h3 {
-      font-size: 2.4rem;
-      margin-bottom: 12px;
+      font-size: 36px;
+      margin-bottom: 16px;
     }
 
-    .pricing-box p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 25px;
-    }
-
-    .contact-info {
+    .contact-wrap {
       display: grid;
-      gap: 18px;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      max-width: 1050px;
+      margin: auto;
     }
 
     .contact-item {
       display: flex;
       gap: 16px;
       align-items: center;
-      padding: 18px;
-      border-radius: 20px;
-      background: var(--soft-bg);
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 22px;
+      background: var(--white);
       border: 1px solid var(--border);
     }
 
-    .contact-item i {
-      color: var(--primary);
-      font-size: 1.4rem;
-    }
-
     footer {
-      padding: 34px 0;
+      padding: 35px 7%;
       text-align: center;
+      background: var(--white);
       border-top: 1px solid var(--border);
-      background: var(--soft-bg);
     }
 
     .socials {
       display: flex;
       justify-content: center;
       gap: 14px;
-      margin-bottom: 16px;
+      margin-top: 18px;
     }
 
     .socials a {
       width: 42px;
       height: 42px;
+      display: grid;
+      place-items: center;
       border-radius: 50%;
-      background: var(--card);
+      background: var(--bg);
+      color: var(--blue);
       border: 1px solid var(--border);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: .3s;
     }
 
-    .socials a:hover {
-      transform: translateY(-5px);
-      background: var(--primary);
-      color: white;
-    }
-
-    .whatsapp-float,
-    .top-btn {
+    .whatsapp-float, .top-btn {
       position: fixed;
-      right: 24px;
+      right: 22px;
       width: 54px;
       height: 54px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
+      display: grid;
+      place-items: center;
       color: white;
-      border: none;
-      cursor: pointer;
-      z-index: 900;
-      box-shadow: 0 16px 35px rgba(0,0,0,.22);
+      z-index: 999;
+      box-shadow: 0 16px 35px rgba(0,0,0,.2);
     }
 
     .whatsapp-float {
-      bottom: 24px;
-      background: #22c55e;
-      font-size: 1.6rem;
+      bottom: 28px;
+      background: #25d366;
+      font-size: 26px;
     }
 
     .top-btn {
-      bottom: 90px;
-      background: var(--primary);
+      bottom: 94px;
+      background: var(--blue);
+      border: none;
+      cursor: pointer;
       opacity: 0;
       pointer-events: none;
       transition: .3s;
@@ -657,8 +515,8 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(35px);
-      transition: .8s ease;
+      transform: translateY(45px);
+      transition: .8s;
     }
 
     .reveal.active {
@@ -667,63 +525,44 @@
     }
 
     @media (max-width: 950px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .grid,
-      .why-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
+      header { width: 94%; }
+      .menu-btn { display: block; }
       .nav-links {
         position: absolute;
         top: 78px;
-        left: 4%;
-        right: 4%;
+        left: 0;
+        right: 0;
         flex-direction: column;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 26px;
-        padding: 24px;
-        display: none;
-        box-shadow: var(--shadow);
+        background: var(--glass);
         backdrop-filter: blur(20px);
+        padding: 24px;
+        border-radius: 24px;
+        border: 1px solid var(--border);
+        display: none;
       }
 
-      .nav-links.active {
-        display: flex;
-      }
+      .nav-links.show { display: flex; }
 
-      .menu {
-        display: block;
-      }
-    }
-
-    @media (max-width: 620px) {
-      h1 {
-        letter-spacing: -2px;
-      }
-
-      .grid,
-      .why-grid,
-      .stats {
+      .hero, .about-wrap, .contact-wrap {
         grid-template-columns: 1fr;
       }
 
-      .hero-card {
-        min-height: auto;
+      .grid, .benefits {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      section {
-        padding: 75px 0;
+      .hero { padding-top: 140px; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 75px 5%; }
+      .grid, .benefits, .stats {
+        grid-template-columns: 1fr;
       }
 
-      nav {
-        padding: 13px 16px;
-      }
+      .hero h1 { letter-spacing: -2px; }
+      .buttons .btn { width: 100%; justify-content: center; }
+      .pricing-box { padding: 30px 20px; }
     }
   </style>
 </head>
@@ -734,328 +573,287 @@
 
   <header>
     <nav>
-      <div class="logo">Jayara<span>.</span></div>
+      <a href="#" class="logo">Jayara<span>.</span></a>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Work</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
 
       <div class="nav-actions">
-        <button class="toggle" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
-        <button class="menu" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
       </div>
     </nav>
   </header>
 
   <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="reveal">
-        <div class="badge"><i class="fa-solid fa-crown"></i> Premium Website Developer</div>
-        <h1>I Build Modern Websites That Help <span class="gradient">Businesses Grow</span></h1>
-        <p>Freelance Web Developer helping local businesses establish a powerful online presence with fast, modern and mobile-friendly websites.</p>
+    <div class="reveal">
+      <div class="tag"><i class="fa-solid fa-crown"></i> Premium Website Developer</div>
+      <h1>I Build Modern Websites That Help <span class="gradient">Businesses Grow</span></h1>
+      <p>Freelance Web Developer helping local businesses establish a powerful online presence with fast, modern and mobile-friendly websites.</p>
 
-        <div class="btn-group">
-          <a href="#portfolio" class="btn btn-primary"><i class="fa-solid fa-eye"></i> View My Work</a>
-          <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
-        </div>
-
-        <div class="stats">
-          <div class="stat"><h3 data-count="15">0</h3><p>Demo Projects</p></div>
-          <div class="stat"><h3 data-count="7">0</h3><p>Business Types</p></div>
-          <div class="stat"><h3 data-count="100">0</h3><p>Mobile Friendly</p></div>
-        </div>
+      <div class="buttons">
+        <a href="#portfolio" class="btn btn-primary"><i class="fa-solid fa-eye"></i> View My Work</a>
+        <a href="#contact" class="btn btn-light"><i class="fa-solid fa-phone"></i> Contact Me</a>
       </div>
+    </div>
 
-      <div class="hero-card reveal">
-        <div class="browser">
-          <div class="browser-top">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          </div>
-          <div class="preview">
-            <div class="line big"></div>
-            <div class="line" style="width:85%"></div>
-            <div class="line" style="width:65%"></div>
-            <div class="grid" style="grid-template-columns:1fr 1fr; margin-top:22px;">
-              <div class="line big"></div>
-              <div class="line big"></div>
-            </div>
-          </div>
+    <div class="hero-card reveal">
+      <div class="dashboard">
+        <div class="dash-top">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <div class="dash-item">
+          <h3>Business Website</h3>
+          <p>Modern design, WhatsApp leads, mobile friendly pages and fast loading experience.</p>
+        </div>
+        <div class="dash-item">
+          <h3>Lead Generation</h3>
+          <p>Clear CTA buttons, service sections and trust-building portfolio layouts.</p>
+        </div>
+        <div class="dash-item">
+          <h3>Premium UI/UX</h3>
+          <p>Glassmorphism, smooth animation and professional micro-interactions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="about" id="about">
-    <div class="container about-grid">
-      <div class="glass reveal">
-        <div class="section-title" style="text-align:left;margin-bottom:20px;">
-          <span>About Me</span>
-          <h2>Jay Dhas</h2>
-        </div>
-        <p>I am passionate about website development and helping businesses look professional online.</p>
-        <p>I build websites for local businesses, restaurants, cafes, hotels, clinics, brokers, construction companies and service businesses.</p>
-        <p>My focus is modern design, fast loading speed, customer experience and websites that help clients get more enquiries.</p>
+  <section>
+    <div class="stats reveal">
+      <div class="stat"><h3 data-count="20">0</h3><p>Demo Projects</p></div>
+      <div class="stat"><h3 data-count="12">0</h3><p>Business Niches</p></div>
+      <div class="stat"><h3 data-count="100">0</h3><p>Mobile Friendly</p></div>
+      <div class="stat"><h3 data-count="24">0</h3><p>Support Ready</p></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-wrap">
+      <div class="profile-box card reveal">
+        <div class="profile-circle"><i class="fa-solid fa-code"></i></div>
+        <h2>Jay Dhas</h2>
+        <p>Founder of Jayara Web Solutions</p>
       </div>
 
-      <div class="glass reveal">
-        <div class="list">
-          <div><i class="fa-solid fa-check-circle"></i> Premium business website design</div>
-          <div><i class="fa-solid fa-check-circle"></i> Clean responsive layouts</div>
-          <div><i class="fa-solid fa-check-circle"></i> WhatsApp and call integration</div>
-          <div><i class="fa-solid fa-check-circle"></i> SEO-friendly page structure</div>
-          <div><i class="fa-solid fa-check-circle"></i> Modern animations and smooth UI</div>
+      <div class="reveal">
+        <div class="section-title" style="text-align:left;margin:0 0 25px">
+          <h2>About <span class="gradient">Jayara</span></h2>
+          <p>Jay Dhas is passionate about website development and builds websites for local businesses, restaurants, cafes, hotels, clinics, brokers, construction companies and service businesses.</p>
         </div>
+        <p style="color:var(--muted);line-height:1.9;font-size:17px">
+          The focus is simple: modern design, fast performance, mobile-first layout and a smooth customer experience that helps business owners look professional and get more enquiries.
+        </p>
       </div>
     </div>
   </section>
 
   <section id="services">
-    <div class="container">
-      <div class="section-title reveal">
-        <span>Services</span>
-        <h2>Websites I Build</h2>
-        <p>Professional websites designed to attract customers and make your business look trusted.</p>
-      </div>
+    <div class="section-title reveal">
+      <h2>Premium <span class="gradient">Services</span></h2>
+      <p>Attractive, fast and professional websites for businesses that want to build trust online.</p>
+    </div>
 
-      <div class="grid">
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-briefcase"></i></div><h3>Business Websites</h3><p>Modern websites for local businesses, shops and service providers.</p></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-mug-hot"></i></div><h3>Restaurant & Cafe Websites</h3><p>Menu, gallery, location, WhatsApp order and booking sections.</p></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-hotel"></i></div><h3>Hotel Websites</h3><p>Premium hotel pages with rooms, facilities, gallery and enquiry buttons.</p></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-stethoscope"></i></div><h3>Clinic Websites</h3><p>Professional healthcare websites with services and appointment contact.</p></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-building"></i></div><h3>Real Estate & Broker Websites</h3><p>Property listings, broker profile, location and lead generation design.</p></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-helmet-safety"></i></div><h3>Construction Company Websites</h3><p>Strong, premium websites for builders, architects and contractors.</p></div>
-      </div>
+    <div class="grid">
+      <div class="card reveal"><div class="icon"><i class="fa-solid fa-briefcase"></i></div><h3>Business Websites</h3><p>Professional websites for small and growing businesses.</p></div>
+      <div class="card reveal"><div class="icon"><i class="fa-solid fa-utensils"></i></div><h3>Restaurant & Cafe Websites</h3><p>Menu, location, WhatsApp order and booking sections.</p></div>
+      <div class="card reveal"><div class="icon"><i class="fa-solid fa-hotel"></i></div><h3>Hotel Websites</h3><p>Room showcase, booking CTA and premium hospitality design.</p></div>
+      <div class="card reveal"><div class="icon"><i class="fa-solid fa-stethoscope"></i></div><h3>Clinic Websites</h3><p>Doctor profile, services, appointment and trust-building layout.</p></div>
+      <div class="card reveal"><div class="icon"><i class="fa-solid fa-building"></i></div><h3>Real Estate & Broker Websites</h3><p>Property listings, inquiry forms and modern property pages.</p></div>
+      <div class="card reveal"><div class="icon"><i class="fa-solid fa-helmet-safety"></i></div><h3>Construction Company Websites</h3><p>Project showcase, company profile and service presentation.</p></div>
     </div>
   </section>
 
   <section id="portfolio">
-    <div class="container">
-      <div class="section-title reveal">
-        <span>Portfolio</span>
-        <h2>Featured Demo Projects</h2>
-        <p>Sample websites created for different business categories.</p>
+    <div class="section-title reveal">
+      <h2>Selected <span class="gradient">Portfolio</span></h2>
+      <p>Demo projects designed to attract real local business clients.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card reveal">
+        <div class="portfolio-img"><i class="fa-solid fa-tooth"></i></div>
+        <h3>Dental Clinic Website</h3>
+        <p>Modern clinic website with appointment CTA and services.</p><br>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#">Live Preview</a>
+          <a class="btn btn-light" href="#">Project Details</a>
+        </div>
       </div>
 
-      <div class="grid">
-        <div class="card portfolio-card reveal">
-          <div class="portfolio-img"><i class="fa-solid fa-house-chimney-window"></i></div>
-          <h3>Interior Design Website</h3>
-          <p>Luxury white-blue business website with premium sections.</p>
-          <div class="small-btns">
-            <a href="#">Live Preview</a>
-            <a href="#">Project Details</a>
-          </div>
+      <div class="card reveal">
+        <div class="portfolio-img"><i class="fa-solid fa-couch"></i></div>
+        <h3>Interior Design Website</h3>
+        <p>Luxury website for interior designers and architects.</p><br>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#">Live Preview</a>
+          <a class="btn btn-light" href="#">Project Details</a>
         </div>
+      </div>
 
-        <div class="card portfolio-card reveal">
-          <div class="portfolio-img"><i class="fa-solid fa-tooth"></i></div>
-          <h3>Dental Clinic Website</h3>
-          <p>Clean healthcare website with trust-building UI and contact buttons.</p>
-          <div class="small-btns">
-            <a href="#">Live Preview</a>
-            <a href="#">Project Details</a>
-          </div>
-        </div>
-
-        <div class="card portfolio-card reveal">
-          <div class="portfolio-img"><i class="fa-solid fa-utensils"></i></div>
-          <h3>Restaurant Website</h3>
-          <p>Modern restaurant website with menu, gallery and WhatsApp enquiry.</p>
-          <div class="small-btns">
-            <a href="#">Live Preview</a>
-            <a href="#">Project Details</a>
-          </div>
+      <div class="card reveal">
+        <div class="portfolio-img"><i class="fa-solid fa-store"></i></div>
+        <h3>Local Business Website</h3>
+        <p>Lead focused website for service businesses.</p><br>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#">Live Preview</a>
+          <a class="btn btn-light" href="#">Project Details</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="why">
-    <div class="container">
-      <div class="section-title reveal">
-        <span>Why Choose Me</span>
-        <h2>Benefits For Your Business</h2>
-      </div>
+  <section>
+    <div class="section-title reveal">
+      <h2>Why Choose <span class="gradient">Me</span></h2>
+    </div>
 
-      <div class="grid why-grid">
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-mobile-screen"></i></div><h3>Mobile Friendly</h3></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-bolt"></i></div><h3>Fast Loading</h3></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-gem"></i></div><h3>Modern Design</h3></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3>SEO Friendly</h3></div>
-        <div class="card reveal"><div class="icon"><i class="fa-brands fa-whatsapp"></i></div><h3>WhatsApp Integration</h3></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-tag"></i></div><h3>Affordable Pricing</h3></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-code"></i></div><h3>Custom Development</h3></div>
-        <div class="card reveal"><div class="icon"><i class="fa-solid fa-headset"></i></div><h3>Launch Support</h3></div>
-      </div>
+    <div class="grid benefits">
+      <div class="card mini reveal"><div class="icon"><i class="fa-solid fa-mobile-screen"></i></div><h3>Mobile Friendly</h3></div>
+      <div class="card mini reveal"><div class="icon"><i class="fa-solid fa-bolt"></i></div><h3>Fast Loading</h3></div>
+      <div class="card mini reveal"><div class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>Modern Design</h3></div>
+      <div class="card mini reveal"><div class="icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3>SEO Friendly</h3></div>
+      <div class="card mini reveal"><div class="icon"><i class="fa-brands fa-whatsapp"></i></div><h3>WhatsApp Integration</h3></div>
+      <div class="card mini reveal"><div class="icon"><i class="fa-solid fa-indian-rupee-sign"></i></div><h3>Affordable Pricing</h3></div>
+      <div class="card mini reveal"><div class="icon"><i class="fa-solid fa-code"></i></div><h3>Custom Development</h3></div>
+      <div class="card mini reveal"><div class="icon"><i class="fa-solid fa-headset"></i></div><h3>Launch Support</h3></div>
     </div>
   </section>
 
-  <section class="process" id="process">
-    <div class="container">
-      <div class="section-title reveal">
-        <span>Process</span>
-        <h2>How I Build Your Website</h2>
-      </div>
+  <section class="process">
+    <div class="section-title reveal">
+      <h2>My Working <span class="gradient">Process</span></h2>
+    </div>
 
-      <div class="grid">
-        <div class="card process-card reveal"><h3>Requirement Discussion</h3><p>Understand your business, target customers and website goal.</p></div>
-        <div class="card process-card reveal"><h3>Design Creation</h3><p>Create a modern design structure suitable for your brand.</p></div>
-        <div class="card process-card reveal"><h3>Website Development</h3><p>Build a fast, responsive and professional website.</p></div>
-        <div class="card process-card reveal"><h3>Review & Feedback</h3><p>Take your feedback and improve the website properly.</p></div>
-        <div class="card process-card reveal"><h3>Launch & Support</h3><p>Publish the website and provide basic guidance after launch.</p></div>
-      </div>
+    <div class="grid">
+      <div class="card reveal"><h3>Requirement Discussion</h3><p>Understanding business needs, services and target customers.</p></div>
+      <div class="card reveal"><h3>Design Creation</h3><p>Creating premium layout and professional user experience.</p></div>
+      <div class="card reveal"><h3>Website Development</h3><p>Building responsive, fast and clean coded website.</p></div>
+      <div class="card reveal"><h3>Review & Feedback</h3><p>Taking feedback and improving the final website.</p></div>
+      <div class="card reveal"><h3>Launch & Support</h3><p>Publishing website and helping after launch.</p></div>
     </div>
   </section>
 
-  <section id="testimonials">
-    <div class="container">
-      <div class="section-title reveal">
-        <span>Testimonials</span>
-        <h2>What Business Owners Say</h2>
+  <section>
+    <div class="section-title reveal">
+      <h2>Client <span class="gradient">Testimonials</span></h2>
+    </div>
+
+    <div class="grid testimonial">
+      <div class="card reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Jayara made our website look very premium. Customers can now contact us directly on WhatsApp.”</p><br>
+        <h3>Rahul Patil</h3><p>Restaurant Owner</p>
       </div>
-
-      <div class="grid">
-        <div class="card testimonial reveal">
-          <div class="stars">★★★★★</div>
-          <p>“Jay created a very clean and premium website for our business. Customers can now contact us directly on WhatsApp.”</p>
-          <h4>Rahul Patil</h4>
-          <small>Restaurant Owner</small>
-        </div>
-
-        <div class="card testimonial reveal">
-          <div class="stars">★★★★★</div>
-          <p>“The website looks modern, professional and works perfectly on mobile. Very good experience.”</p>
-          <h4>Dr. Mehta</h4>
-          <small>Clinic Owner</small>
-        </div>
-
-        <div class="card testimonial reveal">
-          <div class="stars">★★★★★</div>
-          <p>“Our construction company profile now looks trusted online. The design quality is impressive.”</p>
-          <h4>Amit Shah</h4>
-          <small>Construction Business Owner</small>
-        </div>
+      <div class="card reveal">
+        <div class="stars">★★★★★</div>
+        <p>“The design looks clean, modern and professional. Perfect for our local business.”</p><br>
+        <h3>Priya Sharma</h3><p>Clinic Owner</p>
+      </div>
+      <div class="card reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Very smooth process. The website is mobile friendly and loads fast.”</p><br>
+        <h3>Amit Deshmukh</h3><p>Construction Business Owner</p>
       </div>
     </div>
   </section>
 
   <section id="pricing">
-    <div class="container">
-      <div class="glass pricing-box reveal">
-        <div class="section-title" style="margin-bottom:20px;">
-          <span>Pricing</span>
-          <h2>Contact For Pricing</h2>
-        </div>
-        <h3>Custom Website Packages</h3>
-        <p>Every business has different needs. Contact me and I will suggest the best website package according to your business, features and budget.</p>
-        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-message"></i> Get Pricing</a>
-      </div>
+    <div class="pricing-box reveal">
+      <h3>Pricing</h3>
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:25px">
+        Every business has different requirements. Contact for custom pricing based on pages, features and design needs.
+      </p>
+      <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Contact For Pricing</a>
     </div>
   </section>
 
   <section id="contact">
-    <div class="container contact-grid">
-      <div class="reveal">
-        <div class="section-title" style="text-align:left;margin-bottom:25px;">
-          <span>Contact</span>
-          <h2>Let’s Build Your Website</h2>
-          <p>Ready to make your business look professional online? Contact me now.</p>
+    <div class="section-title reveal">
+      <h2>Let’s Build Your <span class="gradient">Website</span></h2>
+      <p>Contact Jayara today and create a premium online presence for your business.</p>
+    </div>
+
+    <div class="contact-wrap">
+      <div class="card reveal">
+        <div class="contact-item">
+          <div class="icon"><i class="fa-solid fa-phone"></i></div>
+          <div><h3>Phone</h3><p>+91 7972219776</p></div>
         </div>
 
-        <div class="btn-group">
-          <a href="https://wa.me/917972219776" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
-          <a href="tel:+917972219776" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <div class="contact-item">
+          <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+          <div><h3>Email</h3><p>jaydhas23@gmail.com</p></div>
+        </div>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="https://wa.me/917972219776" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
+          <a class="btn btn-light" href="tel:+917972219776"><i class="fa-solid fa-phone"></i> Call Now</a>
         </div>
       </div>
 
-      <div class="glass contact-info reveal">
-        <div class="contact-item">
-          <i class="fa-solid fa-phone"></i>
-          <div>
-            <strong>Phone</strong>
-            <p>+91 7972219776</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <i class="fa-solid fa-envelope"></i>
-          <div>
-            <strong>Email</strong>
-            <p>jaydhas23@gmail.com</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <i class="fa-solid fa-location-dot"></i>
-          <div>
-            <strong>Available For</strong>
-            <p>Local businesses, startups and service businesses</p>
-          </div>
-        </div>
+      <div class="card reveal">
+        <h3>Quick Message</h3><br>
+        <input placeholder="Your Name" style="width:100%;padding:16px;border-radius:16px;border:1px solid var(--border);margin-bottom:14px;background:var(--white);color:var(--text)">
+        <input placeholder="Business Type" style="width:100%;padding:16px;border-radius:16px;border:1px solid var(--border);margin-bottom:14px;background:var(--white);color:var(--text)">
+        <textarea placeholder="Tell me about your website requirement" rows="5" style="width:100%;padding:16px;border-radius:16px;border:1px solid var(--border);margin-bottom:14px;background:var(--white);color:var(--text)"></textarea>
+        <a class="btn btn-primary" onclick="sendWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Send On WhatsApp</a>
       </div>
     </div>
   </section>
 
   <footer>
+    <p>Copyright © 2026 Jay Dhas</p>
     <div class="socials">
       <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
       <a href="#"><i class="fa-brands fa-github"></i></a>
-      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
     </div>
-    <p>Copyright © 2026 Jay Dhas. All Rights Reserved.</p>
   </footer>
 
-  <a href="https://wa.me/917972219776" class="whatsapp-float" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <button class="top-btn" id="topBtn">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
+  <a href="https://wa.me/917972219776" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
+  <button class="top-btn" id="topBtn"><i class="fa-solid fa-arrow-up"></i></button>
 
   <script>
     const loader = document.getElementById("loader");
     window.addEventListener("load", () => {
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 700);
+      setTimeout(() => loader.classList.add("hide"), 700);
     });
 
     const menuBtn = document.getElementById("menuBtn");
     const navLinks = document.getElementById("navLinks");
 
-    menuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
+    menuBtn.onclick = () => {
+      navLinks.classList.toggle("show");
+    };
 
     document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
+      link.onclick = () => navLinks.classList.remove("show");
     });
 
     const darkToggle = document.getElementById("darkToggle");
-    darkToggle.addEventListener("click", () => {
+
+    darkToggle.onclick = () => {
       document.body.classList.toggle("dark");
       darkToggle.innerHTML = document.body.classList.contains("dark")
         ? '<i class="fa-solid fa-sun"></i>'
         : '<i class="fa-solid fa-moon"></i>';
-    });
+    };
 
     const reveals = document.querySelectorAll(".reveal");
 
     function revealOnScroll() {
-      reveals.forEach(item => {
+      reveals.forEach(el => {
         const windowHeight = window.innerHeight;
-        const elementTop = item.getBoundingClientRect().top;
+        const elementTop = el.getBoundingClientRect().top;
         if (elementTop < windowHeight - 90) {
-          item.classList.add("active");
+          el.classList.add("active");
         }
       });
     }
@@ -1063,24 +861,34 @@
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
 
+    const topBtn = document.getElementById("topBtn");
+
+    window.addEventListener("scroll", () => {
+      topBtn.classList.toggle("show", window.scrollY > 500);
+    });
+
+    topBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
     const counters = document.querySelectorAll("[data-count]");
     let counterStarted = false;
 
     function startCounters() {
-      const stats = document.querySelector(".stats");
-      if (!stats) return;
+      if (counterStarted) return;
 
-      const statsTop = stats.getBoundingClientRect().top;
-      if (statsTop < window.innerHeight && !counterStarted) {
+      const stats = document.querySelector(".stats");
+      if (stats.getBoundingClientRect().top < window.innerHeight - 100) {
         counterStarted = true;
 
         counters.forEach(counter => {
-          const target = +counter.getAttribute("data-count");
+          const target = +counter.dataset.count;
           let current = 0;
-          const speed = target / 70;
+          const speed = target / 80;
 
           const update = () => {
             current += speed;
+
             if (current < target) {
               counter.innerText = Math.ceil(current);
               requestAnimationFrame(update);
@@ -1097,19 +905,16 @@
     window.addEventListener("scroll", startCounters);
     startCounters();
 
-    const topBtn = document.getElementById("topBtn");
+    function sendWhatsApp() {
+      const inputs = document.querySelectorAll("#contact input, #contact textarea");
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 450) {
-        topBtn.classList.add("show");
-      } else {
-        topBtn.classList.remove("show");
-      }
-    });
+      const name = inputs[0].value || "Client";
+      const business = inputs[1].value || "Business";
+      const message = inputs[2].value || "I want a website for my business.";
 
-    topBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+      const text = `Hello Jayara, my name is ${name}. Business type: ${business}. Requirement: ${message}`;
+      window.open(`https://wa.me/917972219776?text=${encodeURIComponent(text)}`, "_blank");
+    }
   </script>
 
 </body>
